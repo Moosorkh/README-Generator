@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
+import fs from 'fs';
+import generateMarkdown from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
 
@@ -26,12 +28,12 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'contribution',
+        name: 'contributing',
         message: 'Please provide contribution guidelines for your project.'
     },
     {
         type: 'input',
-        name: 'test',
+        name: 'tests',
         message: 'Please provide test instructions for your project.'
     },
     {
