@@ -16,24 +16,16 @@ function renderLicenseBadge(licenseBadge) {
 
 // TODO: Create a function that returns the license link
 function renderLicenseLink(license) {
-  if (license === "MIT") {
-    return "[MIT](https://opensource.org/licenses/MIT)";
-  } else if (license === "Apache 2.0") {
-    return "[Apache 2.0](https://opensource.org/licenses/Apache-2.0)";
-  } else if (license === "GPL 3.0") {
-    return "[GPL 3.0](https://www.gnu.org/licenses/gpl-3.0)";
-  } else if (license === "BSD 3") {
-    return "[BSD 3](https://opensource.org/licenses/BSD-3-Clause)";
-  } else {
-    // If there is no license, return an empty string
+  if (license === "None") {
     return "";
   }
+    return `* [License](#license)`;
 }
 
 // TODO: Create a function that returns the license section of README
 function renderLicenseSection(license) {
   // If there is no license, return an empty string
-  if (!license) {
+  if (license === "None") {
     return "";
   }
   return `## License
@@ -52,7 +44,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [Tests](#tests)
-  * [License](#license)
+  ${renderLicenseLink(data.license)}
   * [Questions](#questions)
   ## Installation
   ${data.installation}
